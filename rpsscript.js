@@ -33,81 +33,101 @@ const humanSelection = getHumanChoice();
 
 
 function playRound() {
-    if (humanSelection === "Rock" && computerSelection === "Paper") {
+    if (humanSelection === "Rock" && computerSelection === "Paper" || 
+        humanSelection === "Paper" && computerSelection === "Scissors" || 
+        humanSelection === "Scissors" && computerSelection === "Rock") 
+        
+    {
         console.log("Computer Chose: " + computerSelection);
         console.log("You Chose: " + humanSelection);
-        console.log("You lose! Paper beats Rock.");
+        console.log('%cYou lost! ', 'font-weight: bold;');
+        console.log(computerSelection + " beats " + humanSelection + ".");
         computerScore++;
-        console.log("Computer Score:" + " " + computerScore);
-        console.log("Your Score:" + " " + humanScore);
-        return computerScore;
-    }
-    if (humanSelection === "Paper" && computerSelection === "Scissors") {
-        console.log("Computer Chose: " + computerSelection);
-        console.log("You Chose: " + humanSelection);
-        console.log("You lose! Scissors beat Paper.")
-        computerScore++;
-        console.log("Computer Score:" + " " + computerScore);
-        console.log("Your Score:" + " " + humanScore);
-        return computerScore;
-    }
-    if (humanSelection === "Scissors" && computerSelection === "Rock") {
-        console.log("Computer Chose: " + computerSelection);
-        console.log("You Chose: " + humanSelection);
-        console.log("You lose! Rock beats Scissors.")
-        computerScore++;
-        console.log("Computer Score:" + " " + computerScore);
-        console.log("Your Score:" + " " + humanScore);
-        return computerScore;
-    }
-    if (humanSelection === "Rock" && computerSelection === "Scissors") {
-        console.log("Computer Chose: " + computerSelection);
-        console.log("You Chose: " + humanSelection);
-        console.log("You win! Rock beats Scissors.")
-        humanScore++;
-        console.log("Computer Score:" + " " + computerScore);
-        console.log("Your Score:" + " " + humanScore);
-        return humanScore;
-    }
-    if (humanSelection === "Paper" && computerSelection === "Rock") {
-        console.log("Computer Chose: " + computerSelection);
-        console.log("You Chose: " + humanSelection);
-        console.log("You win! Paper beats Rock.")
-        humanScore++;
-        console.log("Computer Score:" + " " + computerScore);
-        console.log("Your Score:" + " " + humanScore);
-        return humanScore;
-    }
-    if (humanSelection === "Scissors" && computerSelection === "Paper") {
-        console.log("Computer Chose: " + computerSelection);
-        console.log("You Chose: " + humanSelection);
-        console.log("You win! Scissors beat Paper.")
-        humanScore++;
-        console.log("Computer Score:" + " " + computerScore);
-        console.log("Your Score:" + " " + humanScore);
-        return humanScore;
-    }
-    if (humanSelection === "Rock" && computerSelection === "Rock") {
-        console.log("Computer Chose: " + computerSelection);
-        console.log("You Chose: " + humanSelection);
-        console.log("Draw! One more time!")
         console.log("Computer Score: " + computerScore);
         console.log("Your Score: " + humanScore);
+        return computerScore;
     }
-    if (humanSelection === "Paper" && computerSelection === "Paper") {
+    
+    if (humanSelection === "Rock" && computerSelection === "Scissors" || 
+        humanSelection === "Paper" && computerSelection === "Rock" || 
+        humanSelection === "Scissors" && computerSelection === "Paper") 
+        
+    {
         console.log("Computer Chose: " + computerSelection);
         console.log("You Chose: " + humanSelection);
-        console.log("Draw! One more time!")
-        console.log("Computer Score: " + computerScore);
+        console.log('%cYou win! ', 'font-weight: bold;');
+        console.log(humanSelection + " beats " + computerSelection + ".");
+        humanScore++;
+        console.log("Computer Score: "  + computerScore);
         console.log("Your Score: " + humanScore);
+        return humanScore;
     }
-    if (humanSelection === "Scissors" && computerSelection === "Scissors") {
+
+    else {
         console.log("Computer Chose: " + computerSelection);
         console.log("You Chose: " + humanSelection);
-        console.log("Draw! One more time!")
+        console.log('%cDraw! ', 'font-weight: bold;')
         console.log("Computer Score: " + computerScore);
-        console.log("Your Score: " + humanScore);
+        console.log("Your Score: " + humanScore);   
     }
+    //if (humanSelection === "Paper" && computerSelection === "Scissors") {
+    //    console.log("Computer Chose: " + computerSelection);
+    //    console.log("You Chose: " + humanSelection);
+    //    console.log("You lose! Scissors beat Paper.")
+    //    computerScore++;
+    //    console.log("Computer Score:" + " " + computerScore);
+    //    console.log("Your Score:" + " " + humanScore);
+    //    return computerScore;
+    //}
+    //if (humanSelection === "Scissors" && computerSelection === "Rock") {
+    //    console.log("Computer Chose: " + computerSelection);
+    //    console.log("You Chose: " + humanSelection);
+    //    console.log("You lose! Rock beats Scissors.")
+    //    computerScore++;
+    //    console.log("Computer Score:" + " " + computerScore);
+    //    console.log("Your Score:" + " " + humanScore);
+    //    return computerScore;
+    //}
+
+    //if (humanSelection === "Paper" && computerSelection === "Rock") {
+    //    console.log("Computer Chose: " + computerSelection);
+    //    console.log("You Chose: " + humanSelection);
+    //    console.log("You win! Paper beats Rock.")
+    //    humanScore++;
+    //    console.log("Computer Score:" + " " + computerScore);
+    //    console.log("Your Score:" + " " + humanScore);
+    //    return humanScore;
+    //}
+    //if (humanSelection === "Scissors" && computerSelection === "Paper") {
+    //    console.log("Computer Chose: " + computerSelection);
+    //    console.log("You Chose: " + humanSelection);
+    //    console.log("You win! Scissors beat Paper.")
+    //    humanScore++;
+    //    console.log("Computer Score:" + " " + computerScore);
+    //    console.log("Your Score:" + " " + humanScore);
+    //    return humanScore;
+    //}
+    //if (humanSelection === "Rock" && computerSelection === "Rock") {
+    //    console.log("Computer Chose: " + computerSelection);
+    //    console.log("You Chose: " + humanSelection);
+    //    console.log("Draw! One more time!")
+    //    console.log("Computer Score: " + computerScore);
+    //    console.log("Your Score: " + humanScore);
+    //}
+    //if (humanSelection === "Paper" && computerSelection === "Paper") {
+    //    console.log("Computer Chose: " + computerSelection);
+    //    console.log("You Chose: " + humanSelection);
+    //    console.log("Draw! One more time!")
+    //    console.log("Computer Score: " + computerScore);
+    //    console.log("Your Score: " + humanScore);
+    //}
+    //if (humanSelection === "Scissors" && computerSelection === "Scissors") {
+    //    console.log("Computer Chose: " + computerSelection);
+    //    console.log("You Chose: " + humanSelection);
+    //    console.log("Draw! One more time!")
+    //    console.log("Computer Score: " + computerScore);
+    //    console.log("Your Score: " + humanScore);
+    //}
 }
 
 playRound(humanSelection, computerSelection)
