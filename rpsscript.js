@@ -1,5 +1,13 @@
-let humanScore = 0;
-let computerScore = 0;
+
+
+// Scores
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+// Scores
+
+// ComputerChoice
 
 function getComputerChoice() {
     let computerRNG = Math.floor(Math.random() * 3) + 1;
@@ -16,23 +24,32 @@ function getComputerChoice() {
 
 const computerSelection = getComputerChoice();
 
+// ComputerChoice
+
+// HumanChoice
 
 function getHumanChoice() {
-    let humanChoice = prompt("Rock, paper or scissors?");
+    let humanPrompt = prompt("Rock, paper or scissors?");
     
-    if (humanChoice.toLowerCase() === "rock") {
+    if (humanPrompt.toLowerCase() === "rock") {
             return "Rock";
     } else if
-        (humanChoice.toLowerCase() === "paper") {
+        (humanPrompt.toLowerCase() === "paper") {
             return "Paper";
-    } else (humanChoice.toLowerCase() === "scissors") 
+    } else (humanPrompt.toLowerCase() === "scissors") 
             { return "Scissors"; }
 } 
 
+// HumanChoice
+
 const humanSelection = getHumanChoice();
 
+function playGame() {
 
-function playRound() {
+function playRound(humanSelection, computerSelection) {
+
+// Round Function
+
     if (humanSelection === "Rock" && computerSelection === "Paper" || 
         humanSelection === "Paper" && computerSelection === "Scissors" || 
         humanSelection === "Scissors" && computerSelection === "Rock") 
@@ -70,64 +87,9 @@ function playRound() {
         console.log("Computer Score: " + computerScore);
         console.log("Your Score: " + humanScore);   
     }
-    //if (humanSelection === "Paper" && computerSelection === "Scissors") {
-    //    console.log("Computer Chose: " + computerSelection);
-    //    console.log("You Chose: " + humanSelection);
-    //    console.log("You lose! Scissors beat Paper.")
-    //    computerScore++;
-    //    console.log("Computer Score:" + " " + computerScore);
-    //    console.log("Your Score:" + " " + humanScore);
-    //    return computerScore;
-    //}
-    //if (humanSelection === "Scissors" && computerSelection === "Rock") {
-    //    console.log("Computer Chose: " + computerSelection);
-    //    console.log("You Chose: " + humanSelection);
-    //    console.log("You lose! Rock beats Scissors.")
-    //    computerScore++;
-    //    console.log("Computer Score:" + " " + computerScore);
-    //    console.log("Your Score:" + " " + humanScore);
-    //    return computerScore;
-    //}
 
-    //if (humanSelection === "Paper" && computerSelection === "Rock") {
-    //    console.log("Computer Chose: " + computerSelection);
-    //    console.log("You Chose: " + humanSelection);
-    //    console.log("You win! Paper beats Rock.")
-    //    humanScore++;
-    //    console.log("Computer Score:" + " " + computerScore);
-    //    console.log("Your Score:" + " " + humanScore);
-    //    return humanScore;
-    //}
-    //if (humanSelection === "Scissors" && computerSelection === "Paper") {
-    //    console.log("Computer Chose: " + computerSelection);
-    //    console.log("You Chose: " + humanSelection);
-    //    console.log("You win! Scissors beat Paper.")
-    //    humanScore++;
-    //    console.log("Computer Score:" + " " + computerScore);
-    //    console.log("Your Score:" + " " + humanScore);
-    //    return humanScore;
-    //}
-    //if (humanSelection === "Rock" && computerSelection === "Rock") {
-    //    console.log("Computer Chose: " + computerSelection);
-    //    console.log("You Chose: " + humanSelection);
-    //    console.log("Draw! One more time!")
-    //    console.log("Computer Score: " + computerScore);
-    //    console.log("Your Score: " + humanScore);
-    //}
-    //if (humanSelection === "Paper" && computerSelection === "Paper") {
-    //    console.log("Computer Chose: " + computerSelection);
-    //    console.log("You Chose: " + humanSelection);
-    //    console.log("Draw! One more time!")
-    //    console.log("Computer Score: " + computerScore);
-    //    console.log("Your Score: " + humanScore);
-    //}
-    //if (humanSelection === "Scissors" && computerSelection === "Scissors") {
-    //    console.log("Computer Chose: " + computerSelection);
-    //    console.log("You Chose: " + humanSelection);
-    //    console.log("Draw! One more time!")
-    //    console.log("Computer Score: " + computerScore);
-    //    console.log("Your Score: " + humanScore);
-    //}
+// Round Function
+
 }
 
-playRound(humanSelection, computerSelection)
+}
