@@ -1,50 +1,48 @@
 
 
+// ComputerChoice
+
+    function getComputerChoice() {
+        let computerRNG = Math.floor(Math.random() * 3) + 1;
+
+        if (computerRNG === 1) {
+                return "Rock";
+        } else if 
+            (computerRNG === 2) {
+                return "Paper";
+        } else {
+                return "Scissors";
+            }
+    }
+
+// ComputerChoice
+
+// HumanChoice
+
+    function getHumanChoice() {
+        let humanPrompt = prompt("Rock, paper or scissors?");
+        
+        if (humanPrompt.toLowerCase() === "rock") {
+                return "Rock";
+        } else if
+            (humanPrompt.toLowerCase() === "paper") {
+                return "Paper";
+        } else (humanPrompt.toLowerCase() === "scissors") 
+                { return "Scissors"; }
+    } 
+
+// HumanChoice
+
+
+
+function playGame() {
+    
 // Scores
 
     let humanScore = 0;
     let computerScore = 0;
 
 // Scores
-
-// ComputerChoice
-
-function getComputerChoice() {
-    let computerRNG = Math.floor(Math.random() * 3) + 1;
-
-    if (computerRNG === 1) {
-            return "Rock";
-    } else if 
-        (computerRNG === 2) {
-            return "Paper";
-    } else {
-            return "Scissors";
-        }
-}
-
-const computerSelection = getComputerChoice();
-
-// ComputerChoice
-
-// HumanChoice
-
-function getHumanChoice() {
-    let humanPrompt = prompt("Rock, paper or scissors?");
-    
-    if (humanPrompt.toLowerCase() === "rock") {
-            return "Rock";
-    } else if
-        (humanPrompt.toLowerCase() === "paper") {
-            return "Paper";
-    } else (humanPrompt.toLowerCase() === "scissors") 
-            { return "Scissors"; }
-} 
-
-// HumanChoice
-
-const humanSelection = getHumanChoice();
-
-function playGame() {
 
 function playRound(humanSelection, computerSelection) {
 
@@ -55,8 +53,8 @@ function playRound(humanSelection, computerSelection) {
         humanSelection === "Scissors" && computerSelection === "Rock") 
         
     {
-        console.log("Computer Chose: " + computerSelection);
         console.log("You Chose: " + humanSelection);
+        console.log("Computer Chose: " + computerSelection);
         console.log('%cYou lost! ', 'font-weight: bold;');
         console.log(computerSelection + " beats " + humanSelection + ".");
         computerScore++;
@@ -70,8 +68,8 @@ function playRound(humanSelection, computerSelection) {
         humanSelection === "Scissors" && computerSelection === "Paper") 
         
     {
-        console.log("Computer Chose: " + computerSelection);
         console.log("You Chose: " + humanSelection);
+        console.log("Computer Chose: " + computerSelection);
         console.log('%cYou win! ', 'font-weight: bold;');
         console.log(humanSelection + " beats " + computerSelection + ".");
         humanScore++;
@@ -81,15 +79,53 @@ function playRound(humanSelection, computerSelection) {
     }
 
     else {
-        console.log("Computer Chose: " + computerSelection);
         console.log("You Chose: " + humanSelection);
-        console.log('%cDraw! ', 'font-weight: bold;')
+        console.log("Computer Chose: " + computerSelection);
+        console.log('%cTie! ', 'font-weight: bold;')
         console.log("Computer Score: " + computerScore);
         console.log("Your Score: " + humanScore);   
     }
-
+    
 // Round Function
 
 }
+console.log(" ");
+console.log("%c                     Round 1", 'font-weight: bold;');
+console.log(" ");
+playRound(getHumanChoice(), getComputerChoice());
+
+console.log(" ");
+console.log("%c                     Round 2", 'font-weight: bold;');
+console.log(" ");
+playRound(getHumanChoice(), getComputerChoice());
+
+console.log(" ");
+console.log("%c                     Round 3", 'font-weight: bold;');
+console.log(" ");
+playRound(getHumanChoice(), getComputerChoice());
+
+console.log(" ");
+console.log("%c                     Round 4", 'font-weight: bold;');
+console.log(" ");
+playRound(getHumanChoice(), getComputerChoice());
+
+console.log(" ");
+console.log("%c                     Round 5", 'font-weight: bold;');
+console.log(" ");
+playRound(getHumanChoice(), getComputerChoice());
+
+console.log(" ");
+console.log("%c                   Final Result", 'font-weight: bold;');
+console.log(" ");
+
+if (humanScore > computerScore) {
+    console.log("%cCongrats! You've bested a computer at pure luck.", 'font-weight: bold;')
+} else if (humanScore < computerScore) {
+    console.log("%cYou lost. The computer uprising has begun.", 'font-weight: bold;')
+} else {
+    console.log("%cYou tied with the computer. Balance, at last.", 'font-weight: bold;')
+}
 
 }
+
+playGame();
